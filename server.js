@@ -8,6 +8,11 @@ var developer = [
     {firstName: 'Dan', lastName: 'Aykroyd'},
 ]
 
+app.delete('/rest/developer/:index', function(req, res){
+    developer.splice(req.params.index, 1);
+    res.json(developer);
+})
+
 app.get('/rest/developer', function(req, res){
     res.json(developer);
 })
