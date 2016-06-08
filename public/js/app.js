@@ -5,8 +5,8 @@ app.controller("IdeController", function($scope, $http){
 	.success(function (response){
 		$scope.developers = response;
 	});
-	$scope.add = function(dev){
-		$http.post('/rest/developer/', dev)
+	$scope.add = function(developer){
+		$http.post('/rest/developer/', developer)
 		.success(function(response){
 			$scope.developers = response;
 		});
