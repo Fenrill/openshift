@@ -14,13 +14,28 @@
 <body ng-app="IdeApp">
 	<div class="container" ng-controller="IdeController">
 		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>
+						<input ng-model="dev.firstName" class="form-control">
+					</th>
+					<th>
+						<input ng-model="dev.lastName" class="form-control">
+					</th>
+					<th>
+						<button ng-click="add(dev)" class="btn btn-success pull-right">
+							<span class="glyphicon glyphicon-plus"></span>
+						</button>
+					</th>
+				</tr>
+			</thead>
 			<tbody>
 				<tr ng-repeat="developer in developers">
 					<td>{{developer.firstName}}</td>
 					<td>{{developer.lastName}}</td>
 					<td>
-						<button ng-click="remove($index)" class="button button-danger pull-right">
-							<span class="glyphicon glyphicon-delete">x</span>
+						<button ng-click="remove($index)" class="btn btn-danger pull-right">
+							<span class="glyphicon glyphicon-remove"></span>
 						</button>
 					</td>
 				</tr>
